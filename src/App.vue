@@ -9,9 +9,9 @@
 </template>
 
 <script>
-export default {
-  name: "App"
-};
+  export default {
+    name: "App"
+  };
 </script>
 
 <style>
@@ -31,13 +31,25 @@ export default {
     padding-left: 10px;
   }
 
-  .link-font-size {
+  .link-font-size, .footer-container {
     font-size: 1.5em;
     color: #ffffff;
+  }
+
+  .link-font-size:hover {
+
+    color: #7fffd4;
+
   }
 
   #nav {
     background: #343434;
   }
 
+  .footer-container {
+    background: #343434;
+    color: #ffffff;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
 </style>
