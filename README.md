@@ -24,7 +24,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Introduction
+## Introduction
 This is my first attempt on building a web application using VueJS. The project focuses on the development of a single web application that allows user to retrieve repositories and README.md file associated to a particular GitHub user.
 
 ## Demo (need to fix)
