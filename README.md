@@ -5,6 +5,7 @@
 ## Project setup
 In the command line, type in the following:
 
+### Setup Node Package Manager
 ```
 npm init
 
@@ -20,6 +21,7 @@ author: // leave empty
 license: (ISC) // default value
 ```
 
+### Install dependencies
 ```
 npm install
 ```
