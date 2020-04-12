@@ -19,7 +19,7 @@
                   <div class="card-body">
                     <h5 class="card-title"><strong>Step 1: Key In Username</strong></h5>
                     <p class="card-text"><strong>Description:</strong> Key in a username in the search box input field. Note that, 
-                      the search button can only be clicked if the username provided has a length greater than 1 and
+                      the search button can only be clicked if the username provided has a length greater or equal to 1 and
                       does not contain space in between each characters.</p>
                   </div>
                 </div>
@@ -41,17 +41,20 @@
                     <p class="card-text">The repositories retrieved with respect with the username provided will
                       be displayed on the left hand side under the "GitHub Repository List" header. To learn more on
                       each repositories, simply click on any of the link and the corresponding README file will
-                      be displayed on the right under the "README Content" header.
+                      be displayed on the right hand side under the "README Content" header.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>  
         </div>
       </div>
     </div>
+
+    <footer class="footer-container">
+        <small>Copyright <i class="far fa-copyright"></i> 2020 by JY</small>
+    </footer>
   </div>
 </template>
 
@@ -80,14 +83,16 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#home-content {
-  background: #f08080;
-}
+  #home-content {
+    background: #f08080;
+  }
 
-#jumbo-flex-container {
-	display: flex;
-	justify-content: center;	  
-}
+  #jumbo-flex-container {
+    display: flex;
+    justify-content: center;	  
+  }
+
+  a:hover {
+    color: #7fffd4;
+  }
 </style>
-
-
