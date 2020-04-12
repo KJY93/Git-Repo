@@ -5,22 +5,6 @@
 ## Project setup
 In the command line, type in the following:
 
-### Setup Node Package Manager
-```
-npm init
-
-A few questions will be prompted:
-Just press enter for all and accept the default value
-
-package name: (git-repo) // default value
-version: 0.10 // default value
-entry point: (babel.config.js) // default value
-git repository: (https://github.com/KJY93/Git-Repo.git) // default value
-keywords: // leave empty 
-author: // leave empty 
-license: (ISC) // default value
-```
-
 ### Install dependencies
 ```
 npm install
