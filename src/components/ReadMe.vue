@@ -31,7 +31,7 @@
 
                 <small class="mt-3" id="inputHelp">
                   Note: To activate the search button, user will need to provide
-                  an input with length of at greater or equal to 1 with no space in between the characters.
+                  an input with length greater or equal to 1 and with no space in between the characters.
                 </small>
               </div>
             </div>
@@ -107,7 +107,13 @@ export default {
       fetch(url)
         .then(response => response.json())
         .then(response => {
-          this.repoArr = response;
+          if (response.message === "Not Found") {
+            document.querySelector("#userRepoList").innerHTML = 
+            "<div><h5>Sorry, the GitHub user does not seem to exist!</h5></div>";
+          }
+          else {
+            this.repoArr = response; 
+          } 
         })
         .catch(function(error) {
           console.log("Request failed", error);
