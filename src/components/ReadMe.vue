@@ -5,7 +5,7 @@
         <div class="col-sm-12 col-md-3 d-flex flex-column" id="repoList">
           <div class="row">
             <div id="searchBar" class="col-sm-12">
-              <h3 id="header-section" class="text-center mt-3">Git-Repo-IQ</h3>
+              <h3 id="header-section" class="text-center mt-3">Git-Repo</h3>
               <div class="input-group mt-3 mb-3">
                 <input
                   type="text"
@@ -28,6 +28,11 @@
                     <i class="fas fa-search" id="searchIcon"></i>
                   </button>
                 </div>
+
+                <small class="mt-3" id="inputHelp">
+                  Note: To activate the search button, user will need to provide
+                  an input with length of at greater or equal to 1 with no space in between the characters.
+                </small>
               </div>
             </div>
           </div>
@@ -37,13 +42,9 @@
           </div>
 
           <div>
-            <div v-if="repoArr.length >= 1">
+            <div v-if="repoArr.length > 0">
               <div>
-                <strong>Github Username:</strong>
-                <a
-                  v-bind:href="this.repoArr[0].owner.html_url"
-                  target="_blank"
-                >{{ repoArr[0].owner.login }}</a>
+                <strong>Github Username: </strong>{{ repoArr[0].owner.login }}
               </div>
 
               <div>
@@ -54,9 +55,8 @@
 
             <div id="userRepoList">
               <ol>
-                <!-- 1159pm try getReadMe function -->
                 <li v-for="readme in this.repoArr" :key="readme.name">
-                  <router-link
+                  <router-link id="repoLink"
                     :to="{ name: 'readme', params: { username: readme.owner.login , id: readme.name } }"
                     v-on:click.native="getReadMe(readme.name)"
                   >{{readme.name}}</router-link>
@@ -77,6 +77,10 @@
         </div>
       </div>
     </div>
+
+    <footer class="footer-container">
+        <small>Copyright <i class="far fa-copyright"></i> 2020 by JY</small>
+    </footer>
   </div>
 </template>
 
@@ -90,7 +94,7 @@ export default {
   },
   computed: {
     checkInput: function() {
-      return this.githubUserName.length > 1 &&
+      return this.githubUserName.length >= 1 &&
         this.githubUserName.includes(" ") != true
         ? false
         : true;
@@ -109,7 +113,7 @@ export default {
           console.log("Request failed", error);
         });
     },
-    // 1159pm try getReadMe
+
     getReadMe: function(name) {
       fetch(
         `https://api.github.com/repos/${this.repoArr[0].owner.login}/${name}/readme`,
@@ -140,28 +144,39 @@ export default {
 </script>
 
 <style scoped>
-#searchBar {
-  background: #4285f4;
-}
+  #searchBar {
+    background: #4285f4;
+  }
 
-#repoList {
-  background: #f08080;
-}
+  #repoList {
+    background: #f08080;
+  }
 
-#readMeContent {
-  background: #e8e8e8;
-}
+  #readMeContent {
+    background: #e8e8e8;
+  }
 
-#repoList,
-#readMeContent {
-  overflow-x: hidden;
-  overflow-y: auto;
-  text-align: left;
-  height: 100vh;
-}
+  #repoList,
+  #readMeContent {
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: left;
+    height: 100vh;
+  }
 
-#header-section,
-#searchIcon {
-  color: #ffffff;
-}
+  #searchIcon, #inputHelp {
+    color: #ffffff;
+  }
+
+  #inputHelp {
+    font-size: 1em;
+  }
+
+  #repoLink {
+    color: #000000;
+  }
+
+  #repoLink:hover {
+    color: #7fffd4;
+  }
 </style>
