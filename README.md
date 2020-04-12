@@ -95,7 +95,7 @@ Note: Have tried using background image to tried to get the image to fill up the
 
 Laptop / Desktop                                        |  Mobile Device
 :------------------------------------------------------:|:-----------------------------------------------------:
-![display on laptop](https://imgur.com/m3xYdJT)   | ![display on mobile](https://imgur.com/OZ1IiuX)
+![display on laptop](https://i.imgur.com/m3xYdJT.png)   | ![display on mobile](https://i.imgur.com/OZ1IiuX.png)
 
 ## Credits and Acknowledgements
 1. Window Resize:
