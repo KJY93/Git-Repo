@@ -1,4 +1,4 @@
-# LeadIQ Front End Assignment
+# Vue JS Single Page Application
 
 ## git-repo
 
